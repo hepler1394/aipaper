@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Wireframe - AI Paper Grader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    
+    .wireframe-container {
+      padding: 20px;
+    }
+    
+    .header {
+      background-color: #4a86e8;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-item {
+      cursor: pointer;
+    }
+    
+    .user-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .sidebar {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    
+    .sidebar-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .sidebar-item {
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .sidebar-item.active {
+      background-color: #e6f0ff;
+      color: #4a86e8;
+      font-weight: bold;
+    }
+    
+    .sidebar-item:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    
+    .stat-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 36px;
+      font-weight: bold;
+      color: #4a86e8;
+      margin: 10px 0;
+    }
+    
+    .recent-activity {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .button {
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+    }
+    
+    .primary-button {
+      background-color: #4a86e8;
+      color: white;
+    }
+    
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      align-items: center;
+    }
+    
+    .activity-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .activity-title {
+      font-weight: bold;
+    }
+    
+    .activity-meta {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .activity-status {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    
+    .status-completed {
+      background-color: #e6f7e6;
+      color: #2ecc71;
+    }
+    
+    .status-pending {
+      background-color: #fff7e6;
+      color: #f39c12;
+    }
+    
+    .status-failed {
+      background-color: #ffe6e6;
+      color: #e74c3c;
+    }
+    
+    .documents-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .document-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .document-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #4a86e8;
+    }
+    
+    .document-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .document-meta {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    
+    .document-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+    
+    .subscription-info {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .plan-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .plan-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #4a86e8;
+    }
+    
+    .plan-details {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .plan-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .plan-value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .plan-label {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-container">
+    <div class="header">
+      <div class="logo">AI Paper Grader</div>
+      <div class="nav-menu">
+        <div class="nav-item">Dashboard</div>
+        <div class="nav-item">Grade Papers</div>
+        <div class="nav-item">History</div>
+        <div class="nav-item">Settings</div>
+      </div>
+      <div class="user-menu">
+        <div>Pro Plan</div>
+        <div>User Name</div>
+      </div>
+    </div>
+    
+    <div class="dashboard-grid">
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <div class="sidebar-item active">Dashboard</div>
+          <div class="sidebar-item">Grade Papers</div>
+          <div class="sidebar-item">Recent Grades</div>
+          <div class="sidebar-item">Answer Keys</div>
+          <div class="sidebar-item">Templates</div>
+          <div class="sidebar-item">Analytics</div>
+          <div class="sidebar-item">Settings</div>
+          <div class="sidebar-item">Subscription</div>
+          <div class="sidebar-item">Help & Support</div>
+        </div>
+      </div>
+      
+      <div class="main-content">
+        <div class="subscription-info">
+          <div class="plan-info">
+            <div class="plan-name">Pro Plan</div>
+            <div>Your subscription renews on April 29, 2025</div>
+          </div>
+          <div class="plan-details">
+            <div class="plan-stat">
+              <div class="plan-value">∞</div>
+              <div class="plan-label">Files</div>
+            </div>
+            <div class="plan-stat">
+              <div class="plan-value">100%</div>
+              <div class="plan-label">Features</div>
+            </div>
+            <div class="plan-stat">
+              <div class="plan-value">Priority</div>
+              <div class="plan-label">Support</div>
+            </div>
+          </div>
+          <button class="button primary-button">Manage Plan</button>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div>Papers Graded</div>
+            <div class="stat-value">127</div>
+            <div>This month</div>
+          </div>
+          <div class="stat-card">
+            <div>Average Grade</div>
+            <div class="stat-value">B+</div>
+            <div>All papers</div>
+          </div>
+          <div class="stat-card">
+            <div>Time Saved</div>
+            <div class="stat-value">42h</div>
+            <div>This month</div>
+          </div>
+          <div class="stat-card">
+            <div>Batch Jobs</div>
+            <div class="stat-value">8</div>
+            <div>This month</div>
+          </div>
+        </div>
+        
+        <div class="recent-activity">
+          <div class="section-header">
+            <div class="section-title">Recent Activity</div>
+            <button class="button primary-button">Grade New Papers</button>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-info">
+                <div class="activity-title">Batch: English 101 Essays</div>
+                <div class="activity-meta">15 papers • 30 minutes ago</div>
+              </div>
+              <div class="activity-status status-completed">Completed</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-info">
+                <div class="activity-title">History Midterm - John Smith</div>
+                <div class="activity-meta">1 paper • 2 hours ago</div>
+              </div>
+              <div class="activity-status status-completed">Completed</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-info">
+                <div class="activity-title">Science Reports - Batch 3</div>
+                <div class="activity-meta">8 papers • 3 hours ago</div>
+              </div>
+              <div class="activity-status status-pending">Processing</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-info">
+                <div class="activity-title">Math Quiz - Sarah Johnson</div>
+                <div class="activity-meta">1 paper • 1 day ago</div>
+              </div>
+              <div class="activity-status status-failed">Failed</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recent-activity">
+          <div class="section-header">
+            <div class="section-title">Recent Documents</div>
+            <button class="button primary-button">View All</button>
+          </div>
+          <div class="documents-grid">
+            <div class="document-card">
+              <div class="document-icon">📄</div>
+              <div class="document-title">Essay on Elvis Presley</div>
+              <div class="document-meta">PDF • 5 pages • Graded: B+</div>
+              <div class="document-meta">Graded on: March 28, 2025</div>
+              <div class="document-actions">
+                <button class="button secondary-button">View</button>
+                <button class="button primary-button">Download</button>
+              </div>
+            </div>
+            <div class="document-card">
+              <div class="document-icon">📄</div>
+              <div class="document-title">History Research Paper</div>
+              <div class="document-meta">DOCX • 12 pages • Graded: A-</div>
+              <div class="document-meta">Graded on: March 27, 2025</div>
+              <div class="document-actions">
+                <button class="button secondary-button">View</button>
+                <button class="button primary-button">Download</button>
+              </div>
+            </div>
+            <div class="document-card">
+              <div class="document-icon">📄</div>
+              <div class="document-title">Science Lab Report</div>
+              <div class="document-meta">PDF • 8 pages • Graded: B</div>
+              <div class="document-meta">Graded on: March 25, 2025</div>
+              <div class="document-actions">
+                <button class="button secondary-button">View</button>
+                <button class="button primary-button">Download</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

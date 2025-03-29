@@ -1,0 +1,152 @@
+.grading-setup-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.grading-setup-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Grading Type Selection */
+.grading-type-selection h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.grading-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grading-option {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.grading-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.option-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.grading-option h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.option-note {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+/* Grading Setup Form */
+.grading-setup-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  padding: 30px;
+}
+
+.setup-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+
+.setup-header h2 {
+  margin: 0;
+}
+
+.answer-key-section,
+.criteria-section {
+  margin-bottom: 30px;
+}
+
+.file-count {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+}
+
+.criteria-templates {
+  margin-bottom: 20px;
+}
+
+.criteria-templates h4 {
+  margin-bottom: 10px;
+}
+
+.template-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.template-buttons button {
+  background-color: #f0f0f0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.template-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.criteria-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.setup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grading-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .grading-setup-container {
+    padding: 15px;
+  }
+  
+  .grading-setup-form {
+    padding: 20px;
+  }
+}

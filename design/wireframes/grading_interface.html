@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grading Interface Wireframe - AI Paper Grader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    
+    .wireframe-container {
+      padding: 20px;
+    }
+    
+    .header {
+      background-color: #4a86e8;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-item {
+      cursor: pointer;
+    }
+    
+    .user-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .grading-interface {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 20px;
+      height: calc(100vh - 150px);
+      margin-top: 20px;
+    }
+    
+    .panel {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .panel-header {
+      font-weight: bold;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    
+    .criteria-panel {
+      border-left: 4px solid #4a86e8;
+    }
+    
+    .document-panel {
+      border-left: 4px solid #6aa84f;
+    }
+    
+    .summary-panel {
+      border-left: 4px solid #f1c232;
+    }
+    
+    .panel-content {
+      flex-grow: 1;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    
+    .panel-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .button {
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+    }
+    
+    .primary-button {
+      background-color: #4a86e8;
+      color: white;
+    }
+    
+    .secondary-button {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+    
+    .file-info {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    
+    .grade-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .grade-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+    }
+    
+    .final-grade {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+      color: #4a86e8;
+    }
+    
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .toolbar-item {
+      padding: 5px 10px;
+      background-color: #f1f1f1;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-container">
+    <div class="header">
+      <div class="logo">AI Paper Grader</div>
+      <div class="nav-menu">
+        <div class="nav-item">Dashboard</div>
+        <div class="nav-item">Grade Papers</div>
+        <div class="nav-item">History</div>
+        <div class="nav-item">Settings</div>
+      </div>
+      <div class="user-menu">
+        <div>Pro Plan</div>
+        <div>User Name</div>
+      </div>
+    </div>
+    
+    <div class="grading-interface">
+      <div class="panel criteria-panel">
+        <div class="panel-header">Grading Criteria</div>
+        <div class="toolbar">
+          <div class="toolbar-item">Edit</div>
+          <div class="toolbar-item">Save</div>
+          <div class="toolbar-item">Load Template</div>
+        </div>
+        <div class="panel-content">
+          <p><strong>Content (40%)</strong></p>
+          <p>- Thesis statement is clear and focused</p>
+          <p>- Arguments are well-developed and supported</p>
+          <p>- Evidence is relevant and properly cited</p>
+          <p>- Analysis demonstrates critical thinking</p>
+          
+          <p><strong>Organization (30%)</strong></p>
+          <p>- Introduction effectively presents the topic</p>
+          <p>- Paragraphs are well-structured</p>
+          <p>- Transitions between ideas are smooth</p>
+          <p>- Conclusion summarizes key points</p>
+          
+          <p><strong>Language (20%)</strong></p>
+          <p>- Grammar and syntax are correct</p>
+          <p>- Vocabulary is appropriate and varied</p>
+          <p>- Tone is consistent and appropriate</p>
+          
+          <p><strong>Formatting (10%)</strong></p>
+          <p>- Document follows required format</p>
+          <p>- Citations follow proper style</p>
+          <p>- Bibliography is complete and formatted correctly</p>
+        </div>
+        <div class="panel-footer">
+          <button class="button secondary-button">Reset</button>
+          <button class="button primary-button">Apply</button>
+        </div>
+      </div>
+      
+      <div class="panel document-panel">
+        <div class="panel-header">Document Being Graded</div>
+        <div class="file-info">
+          <div><strong>File:</strong> essay_on_elvis.pdf</div>
+          <div><strong>Student:</strong> John Doe</div>
+          <div><strong>Submitted:</strong> March 28, 2025</div>
+        </div>
+        <div class="toolbar">
+          <div class="toolbar-item">Zoom In</div>
+          <div class="toolbar-item">Zoom Out</div>
+          <div class="toolbar-item">Annotate</div>
+          <div class="toolbar-item">Full Screen</div>
+        </div>
+        <div class="panel-content">
+          <h2>The Life and Legacy of Elvis Presley</h2>
+          <p>Elvis Aaron Presley, often referred to as the "King of Rock and Roll," was an American singer, musician, and actor who became one of the most iconic cultural figures of the 20th century. Born on January 8, 1935, in Tupelo, Mississippi, Elvis rose from humble beginnings to become a global superstar whose influence continues to resonate in music and popular culture decades after his death.</p>
+          
+          <p>This essay explores the life, career, and lasting impact of Elvis Presley, examining how his unique blend of musical styles and charismatic performances revolutionized popular music and challenged the social and cultural norms of his time.</p>
+          
+          <h3>Early Life and Musical Influences</h3>
+          <p>Elvis Presley was born to Vernon and Gladys Presley in a two-room house built by his father. His identical twin brother, Jesse Garon Presley, was stillborn, leaving Elvis to grow up as an only child. The Presley family moved to Memphis, Tennessee, when Elvis was 13 years old, seeking better economic opportunities.</p>
+          
+          <p>Growing up in a predominantly African American neighborhood, young Elvis was exposed to a diverse range of musical styles, including gospel, country, and rhythm and blues. This multicultural musical environment would later influence his distinctive sound, which blended elements from these various genres.</p>
+          
+          <!-- Document content continues -->
+        </div>
+        <div class="panel-footer">
+          <button class="button secondary-button">Previous Page</button>
+          <button class="button primary-button">Next Page</button>
+        </div>
+      </div>
+      
+      <div class="panel summary-panel">
+        <div class="panel-header">Grade Summary</div>
+        <div class="toolbar">
+          <div class="toolbar-item">Edit</div>
+          <div class="toolbar-item">Export</div>
+          <div class="toolbar-item">Print</div>
+        </div>
+        <div class="panel-content">
+          <div class="final-grade">B+ (87%)</div>
+          
+          <div class="grade-summary">
+            <div class="grade-item">
+              <span>Content</span>
+              <span>35/40</span>
+            </div>
+            <div class="grade-item">
+              <span>Organization</span>
+              <span>26/30</span>
+            </div>
+            <div class="grade-item">
+              <span>Language</span>
+              <span>17/20</span>
+            </div>
+            <div class="grade-item">
+              <span>Formatting</span>
+              <span>9/10</span>
+            </div>
+          </div>
+          
+          <h4>Feedback:</h4>
+          <p>This essay presents a well-researched overview of Elvis Presley's life and career. The thesis is clear, and the arguments are generally well-supported with relevant evidence.</p>
+          
+          <p>Strengths:</p>
+          <ul>
+            <li>Comprehensive coverage of subject matter</li>
+            <li>Good use of specific examples</li>
+            <li>Clear organization with logical flow</li>
+          </ul>
+          
+          <p>Areas for improvement:</p>
+          <ul>
+            <li>Some claims lack sufficient supporting evidence</li>
+            <li>Transitions between paragraphs could be smoother</li>
+            <li>A few grammatical errors need correction</li>
+          </ul>
+          
+          <p>Overall, this is a strong essay that demonstrates good understanding of the subject and effective writing skills.</p>
+        </div>
+        <div class="panel-footer">
+          <button class="button secondary-button">Save Draft</button>
+          <button class="button primary-button">Finalize Grade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Wireframe - AI Paper Grader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    
+    .wireframe-container {
+      padding: 0;
+    }
+    
+    .header {
+      background-color: #4a86e8;
+      color: white;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-item {
+      cursor: pointer;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .button {
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+    }
+    
+    .primary-button {
+      background-color: #4a86e8;
+      color: white;
+    }
+    
+    .secondary-button {
+      background-color: white;
+      color: #4a86e8;
+    }
+    
+    .hero-section {
+      background-color: #2c3e50;
+      color: white;
+      padding: 100px 50px;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+      font-size: 24px;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #f1c232;
+      color: #2c3e50;
+    }
+    
+    .features-section {
+      padding: 80px 50px;
+      text-align: center;
+    }
+    
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #4a86e8;
+    }
+    
+    .feature-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    
+    .plans-section {
+      padding: 80px 50px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .plan-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .plan-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .plan-price {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #4a86e8;
+    }
+    
+    .plan-features {
+      text-align: left;
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+    
+    .feature-item {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .testimonials-section {
+      padding: 80px 50px;
+      text-align: center;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin-right: 15px;
+    }
+    
+    .footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 50px;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-link {
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .features-grid, .plans-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-container">
+    <div class="header">
+      <div class="logo">AI Paper Grader</div>
+      <div class="nav-menu">
+        <div class="nav-item">Features</div>
+        <div class="nav-item">Pricing</div>
+        <div class="nav-item">Testimonials</div>
+        <div class="nav-item">FAQ</div>
+      </div>
+      <div class="auth-buttons">
+        <button class="button secondary-button">Log In</button>
+        <button class="button primary-button">Sign Up</button>
+      </div>
+    </div>
+    
+    <div class="hero-section">
+      <div class="hero-title">Grade Papers with AI</div>
+      <div class="hero-subtitle">Save time and provide consistent feedback with our AI-powered grading platform. Upload papers, set criteria, and let AI do the heavy lifting.</div>
+      <button class="button cta-button">Get Started for Free</button>
+    </div>
+    
+    <div class="features-section">
+      <div class="section-title">Key Features</div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <div class="feature-title">Multiple File Formats</div>
+          <div class="feature-description">Upload and grade PDFs, Word documents, Excel files, and more. Extract files from ZIP archives for batch processing.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <div class="feature-title">AI-Powered Grading</div>
+          <div class="feature-description">Leverage advanced AI to grade papers based on your criteria. Consistent and objective evaluation every time.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👁️</div>
+          <div class="feature-title">Three-Panel Interface</div>
+          <div class="feature-description">View grading criteria, student work, and grade summary side by side for efficient review and feedback.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔑</div>
+          <div class="feature-title">Custom API Keys</div>
+          <div class="feature-description">Use our default AI integration or connect your own API keys for enhanced customization.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <div class="feature-title">Detailed Analytics</div>
+          <div class="feature-description">Track student performance, identify trends, and generate comprehensive reports.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Batch Processing</div>
+          <div class="feature-description">Grade multiple papers simultaneously with our batch processing feature (Pro plan).</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="plans-section">
+      <div class="section-title">Choose Your Plan</div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-title">Free</div>
+          <div class="plan-price">$0</div>
+          <div class="plan-features">
+            <div class="feature-item">✓ Up to 5 files per month</div>
+            <div class="feature-item">✓ Basic grading with answer key</div>
+            <div class="feature-item">✓ Up to 5 reference files</div>
+            <div class="feature-item">✓ Manual grading of individual documents</div>
+            <div class="feature-item">✓ Download graded papers</div>
+            <div class="feature-item">✗ Custom grading rubrics</div>
+            <div class="feature-item">✗ Batch processing</div>
+          </div>
+          <button class="button primary-button">Get Started</button>
+        </div>
+        <div class="plan-card">
+          <div class="plan-title">Starter</div>
+          <div class="plan-price">$9.99/mo</div>
+          <div class="plan-features">
+            <div class="feature-item">✓ Up to 50 files per month</div>
+            <div class="feature-item">✓ Advanced grading options</div>
+            <div class="feature-item">✓ Expanded reference options</div>
+            <div class="feature-item">✓ Custom grading rubrics</div>
+            <div class="feature-item">✓ Basic analytics</div>
+            <div class="feature-item">✓ Download graded papers with annotations</div>
+            <div class="feature-item">✗ Batch processing</div>
+          </div>
+          <button class="button primary-button">Choose Starter</button>
+        </div>
+        <div class="plan-card">
+          <div class="plan-title">Pro</div>
+          <div class="plan-price">$29.99/mo</div>
+          <div class="plan-features">
+            <div class="feature-item">✓ Unlimited file uploads</div>
+            <div class="feature-item">✓ Batch grading functionality</div>
+            <div class="feature-item">✓ Advanced analytics and reporting</div>
+            <div class="feature-item">✓ Custom AI fine-tuning options</div>
+            <div class="feature-item">✓ Bulk download of graded papers</div>
+            <div class="feature-item">✓ Priority processing</div>
+            <div class="feature-item">✓ Premium support</div>
+          </div>
+          <button class="button primary-button">Choose Pro</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testimonials-section">
+      <div class="section-title">What Our Users Say</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-text">"AI Paper Grader has revolutionized how I grade assignments. What used to take me hours now takes minutes, and the feedback is more consistent than ever."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar"></div>
+            <div>
+              <div><strong>Dr. Sarah Johnson</strong></div>
+              <div>Professor of English, University of California</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-text">"The batch processing feature in the Pro plan is a game-changer. I can grade an entire class set of essays in one go, saving me countless hours each week."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar"></div>
+            <div>
+              <div><strong>Mark Thompson</strong></div>
+              <div>High School Teacher, Boston Public Schools</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="footer-links">
+        <div class="footer-link">About Us</div>
+        <div class="footer-link">Privacy Policy</div>
+        <div class="footer-link">Terms of Service</div>
+        <div class="footer-link">Contact</div>
+      </div>
+      <div>© 2025 AI Paper Grader. All rights reserved.</div>
+    </div>
+  </div>
+</body>
+</html>
